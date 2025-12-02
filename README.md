@@ -16,3 +16,4 @@ Cvar | Parameter | Description
 `ms_colorconsole_maxtime` | <5/3600> | Maximum time for displaying the timer
 
 ### Screenshot
+<img width="405" height="296" alt="ColorConsole" src="https://github.com/user-attachments/assets/3717b527-c04a-48de-a7af-64f6d61a698d" />
