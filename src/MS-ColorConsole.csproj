@@ -5,11 +5,11 @@
     <RootNamespace>MS_ColorConsole</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ModSharp.Sharp.Shared" Version="2.1.88" />
+    <PackageReference Include="ModSharp.Sharp.Shared" Version="2.1.132" />
   </ItemGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">

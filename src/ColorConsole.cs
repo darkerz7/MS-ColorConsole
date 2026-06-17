@@ -16,14 +16,14 @@ namespace MS_ColorConsole
         public ColorConsole(ISharedSystem sharedSystem, string dllPath, string sharpPath, Version version, IConfiguration coreConfiguration, bool hotReload)
         {
             _modSharp = sharedSystem.GetModSharp();
-            _entities = sharedSystem.GetEntityManager();
             _events = sharedSystem.GetEventManager();
+            _clients = sharedSystem.GetClientManager();
             _convars = sharedSystem.GetConVarManager();
         }
 
         public static IModSharp? _modSharp;
-        public static IEntityManager? _entities;
         public static IEventManager? _events;
+        public static IClientManager? _clients;
         private readonly IConVarManager _convars;
 
         private IConVar? g_cvar_ChatTimer;
@@ -145,9 +145,9 @@ namespace MS_ColorConsole
             Console.WriteLine(sAfterTimer);
             Console.ResetColor();
 
-            foreach(var player in _entities!.GetPlayerControllers(true))
+            foreach (var client in _clients!.GetGameClients(true))
             {
-                player.Print(HudPrintChannel.Chat, $" {ChatColor.DarkRed}[Console]: {ChatColor.White}{message}{(string.IsNullOrEmpty(sAfterTimer) ? "" : $"{ChatColor.Gold}{sAfterTimer}")}");
+                client.Print(HudPrintChannel.Chat, $" {ChatColor.DarkRed}[Console]: {ChatColor.White}{message}{(string.IsNullOrEmpty(sAfterTimer) ? "" : $"{ChatColor.Gold}{sAfterTimer}")}");
             }
 
             return ECommandAction.Stopped;

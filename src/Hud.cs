@@ -43,22 +43,9 @@ namespace MS_ColorConsole
 
             if (!string.IsNullOrEmpty(sMessage))
             {
-                PrintToCenterHtml(sMessage);
+                ColorConsole._clients!.PrintCenterHtmlToAll(sMessage);
             }
             else KillTimer();
-        }
-
-        void PrintToCenterHtml(string message)
-        {
-            //FlashingHtmlHudFix
-            ColorConsole._modSharp!.GetGameRules().IsGameRestart = ColorConsole._modSharp!.GetGameRules().RestartRoundTime < ColorConsole._modSharp!.EngineTime();
-            if (ColorConsole._events!.CreateEvent("show_survival_respawn_status", true) is { } Event)
-            {
-                Event.SetString("loc_token", message);
-                Event.SetInt("duration", 1);
-                Event.FireToClients();
-                Event.Dispose();
-            }
         }
 
         void RemoveElementsFromList(double fCurrentTime)

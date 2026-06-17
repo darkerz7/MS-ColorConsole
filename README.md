@@ -2,7 +2,7 @@
 Сolor console with multi-timer
 
 ## Required packages:
-1. [ModSharp](https://github.com/Kxnrl/modsharp-public)
+1. [ModSharp](https://github.com/Kxnrl/modsharp-public) (min. git132)
 
 ## Installation:
 1. Compile or copy MS-ColorConsole to `sharp/modules/MS-ColorConsole` folger
